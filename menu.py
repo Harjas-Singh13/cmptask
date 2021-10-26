@@ -5,7 +5,7 @@ import logging
 import os
 from main import User, UserManager
 
-def main():
+def user():
 
     logging.basicConfig(level=logging.INFO)
     # use the below logger
@@ -92,4 +92,4 @@ def main():
         user_menu(user_manager=user_manager)
 
     # just shows how to update user info
-main()
+user()

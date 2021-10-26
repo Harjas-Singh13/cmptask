@@ -1,6 +1,7 @@
 from stdiomask import getpass
 import hashlib
 import os
+from menu import user
 clear = lambda: os.system('cls')
 
 def main():
@@ -37,7 +38,8 @@ def admin():
         while True :
             choice = input("Enter Admin Option : ")
             if choice == '1':
-                print("User Management System: ")
+                user()
+                
             elif choice == '2':
                 print("Weather Forecast System")
             break
