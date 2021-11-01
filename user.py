@@ -1,4 +1,7 @@
+# This is a sample Python script.
 
+# Press ⌃R to execute it or replace it with your code.
+# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import dataclasses
 import json
 import logging
@@ -51,7 +54,8 @@ class UserManager:
         :param user:
         :return:
         """
-        pass
+        logger.info(f"Updating user with id {user.user_id}")
+        self._state[user.user_id] = user
 
     def read_user(self, user_id: str) -> User:
         """
@@ -89,8 +93,8 @@ if __name__ == "__main__":
     user_manager = UserManager()
     user_manager.create_user(user_1)
     user_manager.create_user(user_2)
-    user_manager.serialize("data.txt")
-    user_manager_from_file = UserManager.deserialize("data.txt")
+    user_manager.serialize("/tmp/abc.txt")
+    user_manager_from_file = UserManager.deserialize("/tmp/abc.txt")
     logger.info(f"Retrieving User {user_manager_from_file.read_user(user_2.user_id)}")
     logger.info(f"All users {user_manager_from_file.read_all_users()}")
     user_3 = User(name="jas", user_id="abcdef")

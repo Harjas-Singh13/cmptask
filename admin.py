@@ -1,7 +1,10 @@
 from stdiomask import getpass
 import hashlib
 import os
-from menu import user
+from menu import  * 
+from user import *
+from user import User, UserManager
+from weather import *
 clear = lambda: os.system('cls')
 
 def main():
@@ -10,7 +13,6 @@ def main():
     print("---------")
     print()
     print("1 - Admin Login")
-    # print("2 - User Login")
     print()
     while True:
         print()
@@ -38,11 +40,12 @@ def admin():
         while True :
             choice = input("Enter Admin Option : ")
             if choice == '1':
-                user()
+                user_menu(UserManager)
                 
-            elif choice == '2':
-                print("Weather Forecast System")
-            break
+                
+            elif choice == '2':     
+                pass
+            
     else:
         print ('Wrong Credentials')
         
